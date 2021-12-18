@@ -1,6 +1,6 @@
 # RPi-SDRangle-install-notes.
 
-sudo apt-get -y install libopencv-dev libxml2-dev libavcodec-dev libavformat-dev graphviz bison flex ffmpeg libopus-dev libfaad-dev
+```sudo apt-get -y install libopencv-dev libxml2-dev libavcodec-dev libavformat-dev graphviz bison flex ffmpeg libopus-dev libfaad-dev
 
 # Optional full QT5 install 
 #git clone git://code.qt.io/qt/qt5.git
@@ -166,4 +166,4 @@ cd f4exb
 fftwf-wisdom -n -o fftw-wisdom 128 256 512 1024 2048 4096 8192 16384 32768
 
 #Run SDRangel from gui terminal
-/opt/install/sdrangel/bin/sdrangel --fftwf-wisdom ~/.config/f4exb/fftw-wisdom
+/opt/install/sdrangel/bin/sdrangel --fftwf-wisdom ~/.config/f4exb/fftw-wisdom```
