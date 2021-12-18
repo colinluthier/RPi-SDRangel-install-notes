@@ -12,7 +12,9 @@ sudo apt-get -y install libopencv-dev libxml2-dev libavcodec-dev libavformat-dev
 #make
 #make install
 
-sudo apt install -y cmake build-essential
+sudo apt-get install -y cmake build-essential
+sudo apt-get install -y libboost1.74-all-dev
+
 
 # These are the required QT5 build libraries. 
 sudo apt-get -y install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
@@ -115,8 +117,7 @@ mkdir build; cd build
 cmake -Wno-dev -DCMAKE_INSTALL_PREFIX=/opt/install/sgp4 ..
 make -j $(nproc) install
 
-#json
-cd ~/SDRangel
+#JSON
 git clone https://github.com/nlohmann/json.git
 cd json
 md build
@@ -124,6 +125,7 @@ cd build
 cmake -DJSON_MultipleHeaders=ON ../json
 make
 sudo make install
+sudo ldconfig
 
 #LibSigMF
 cd ~/SDRangel
