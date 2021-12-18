@@ -1,7 +1,7 @@
-# RPi-SDRangel-install-notes.
+# RPi-SDRangel-install-notes
 
 ```
-sudo apt-get -y install libopencv-dev libxml2-dev libavcodec-dev libavformat-dev graphviz bison flex ffmpeg libopus-dev libfaad-dev
+sudo apt-get -y install libopencv-dev libxml2-dev libavcodec-dev libavformat-dev graphviz bison flex ffmpeg libopus-dev libfaad-dev libsamplerate0-dev
 
 # Optional full QT5 install 
 #git clone git://code.qt.io/qt/qt5.git
@@ -11,6 +11,8 @@ sudo apt-get -y install libopencv-dev libxml2-dev libavcodec-dev libavformat-dev
 #.configure
 #make
 #make install
+
+sudo apt install -y cmake build-essential
 
 # These are the required QT5 build libraries. 
 sudo apt-get -y install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
@@ -27,7 +29,7 @@ mkdir -p ~/SDRangel
 cd ~/SDRangel
 wget http://www.fftw.org/fftw-3.3.10.tar.gz
 tar zxvf fftw-3.3.10.tar.gz
-sudo mkdir/usr/local/fftw
+#sudo mkdir /usr/local/fftw
 cd fftw-3.3.10
 ./configure 
 make
@@ -93,8 +95,6 @@ git reset --hard "v1.9.3"
 mkdir build; cd build
 cmake -Wno-dev -DCMAKE_INSTALL_PREFIX=/opt/install/dsdcc -DUSE_MBELIB=ON -DLIBMBE_INCLUDE_DIR=/opt/install/mbelib/include -DLIBMBE_LIBRARY=/opt/install/mbelib/lib/libmbe.so -DLIBSERIALDV_INCLUDE_DIR=/opt/install/serialdv/include/serialdv -DLIBSERIALDV_LIBRARY=/opt/install/serialdv/lib/libserialdv.so ..
 make -j $(nproc) install
-
-sudo apt-get install libsamplerate0-dev
 
 #Codec2/FreeDV
 # Codec2 is already installed from the packager, but this version is required for SDRangel.
@@ -167,4 +167,5 @@ cd f4exb
 fftwf-wisdom -n -o fftw-wisdom 128 256 512 1024 2048 4096 8192 16384 32768
 
 #Run SDRangel from gui terminal
-/opt/install/sdrangel/bin/sdrangel --fftwf-wisdom ~/.config/f4exb/fftw-wisdom```
+/opt/install/sdrangel/bin/sdrangel --fftwf-wisdom ~/.config/f4exb/fftw-wisdom
+```
