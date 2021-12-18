@@ -1,4 +1,4 @@
-# RPi-SDRangle-install-notes.
+# RPi-SDRangel-install-notes.
 
 ```sudo apt-get -y install libopencv-dev libxml2-dev libavcodec-dev libavformat-dev graphviz bison flex ffmpeg libopus-dev libfaad-dev
 
